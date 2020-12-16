@@ -1,0 +1,201 @@
+h1 {
+	font-family: $riposte;
+	font-size: rem-calc( 65 );
+	line-height: calc( 65 / 65 );
+	font-weight: 600;
+	margin-bottom: 1rem;
+	
+	@include breakpoint(small only) {
+		font-size: rem-calc( 42 );
+		line-height: calc( 42 / 42 );
+
+	}
+	
+	&.alt {
+		font-size: rem-calc( 30 );
+		line-height: calc( 36 / 30 );
+		font-weight: 600;
+		letter-spacing: 1px;
+		
+		@include breakpoint(small only) {
+			font-size: rem-calc( 26 );
+			line-height: calc( 31.2 / 26 );
+
+		}
+		
+	}
+}
+
+h2 {
+	font-family: $riposte;
+	font-size: rem-calc( 38 );
+	line-height: calc( 46 / 38 );
+	font-weight: 700;
+	text-transform: uppercase;
+	
+	@include breakpoint(small only) {
+		font-size: rem-calc( 30 );
+		line-height: calc( 36 / 30 );
+
+	}
+	
+}
+
+h3 {
+	font-family: $riposte;
+	font-size: rem-calc( 27 );
+	line-height: calc( 33 / 27 );
+	font-weight: 400;
+	
+	@include breakpoint(small only) {
+		font-size: rem-calc( 20 );
+		line-height: calc( 24 / 20 );
+
+	}
+	
+}
+
+h4 {
+	font-family: $riposte;
+	font-size: rem-calc( 16 );
+	line-height: calc( 24 / 16 );
+	font-weight: 700;
+	
+	@include breakpoint(small only) {
+		font-size: rem-calc( 14 );
+		line-height: calc( 17 / 14 );
+
+	}
+	
+	
+}
+
+h5, .inline-cta {
+	font-family: $riposte;
+	font-size: rem-calc( 22 );
+	line-height: calc( 22 / 22 );
+	font-weight: 600;
+	
+	@include breakpoint(small only) {
+		font-size: rem-calc( 18 );
+		line-height: calc( 18 / 18 );
+
+	}
+	
+
+}
+
+h6, .gfield_label {
+	font-family: $riposte;
+	font-size: rem-calc( 15 );
+	line-height: calc( 18 / 15 );
+	font-weight: 700;
+	
+	@include breakpoint(small only) {
+		font-size: rem-calc( 15 );
+		line-height: calc( 18 / 15 );
+
+	}
+	
+	
+	abbr, abbr[title] {
+		border: none;
+		color: $black;
+		
+	}
+}
+
+label {
+	margin-bottom: .5rem;
+}
+
+p {
+	font-family: $maison;
+	font-size: rem-calc( 16 );
+	line-height: calc( 24 / 16 );
+	font-weight: 400;
+}
+
+.cta-frame {
+	display: inline-block;
+	padding-right: .5rem;
+	padding-bottom: .5rem;
+	position: relative;
+	
+	@include transition(all .2s ease-in-out);
+	
+	.button {
+		margin: 0;
+
+	}
+	
+	&:after {
+		content: '';
+		position: absolute;
+		width: calc(100% - .5rem);
+		height: calc(100% - .5rem);
+		bottom: 0;
+		right: 0;
+		border: 2px solid $black;
+		z-index: 1;
+		@include transition(all .2s ease-in-out);
+		//border-radius: .25rem;
+	}
+	
+	&:hover, &:focus {
+		padding: 0;
+		
+		.button {
+			margin-left: .5rem;
+			margin-top: .5rem;
+		}
+		
+	}
+	
+}
+
+.button {
+	display: block;
+	position: relative;
+	padding: 1rem;
+	background: $black;
+	@extend h4;
+	z-index: 2;	
+	@include transition(all .2s ease-in-out);
+
+	&:hover, &:focus {
+		margin-right: 0;
+		background: $black;
+		
+	}
+	
+	&:active {
+		background: $red;
+	}
+	
+}
+
+mark {
+	background-color: transparent;
+}
+
+address {
+	margin-bottom: 1rem;
+}
+
+a {
+	color: $black;
+	
+	&:hover, &:focus {
+		color: $red;
+	}
+}
+
+.inline-cta {
+	
+}
+
+hr {
+	margin: 0 auto;
+	border-bottom: 1px solid $black;
+}

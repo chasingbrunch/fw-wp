@@ -1,0 +1,218 @@
+header.header {
+	z-index: 40;
+	position: relative;
+}
+
+.login-bar {
+	background: $black;
+	color: $white;
+	//padding: .5rem 0;
+	
+	.grid-x {
+		justify-content: flex-end;
+		align-items: center;
+		
+		.shop-message {
+			text-align: center;
+			padding: 1rem 0;
+			
+			@include breakpoint(small only) {
+				padding: 1rem;
+			}
+			
+		}
+		
+		.login-menu {
+			text-align: right;
+			position: relative;
+			
+			button {
+				color: $white;
+				display: inline-block;
+				cursor: pointer;
+				padding: 1rem 0;
+				
+				&:first-of-type {
+					padding-right: 1rem;
+					margin-right: 1rem;
+					//border-right: 2px solid $white;
+				}
+				
+				&:hover, &:focus {
+					color: $grey;
+				}
+				
+				&.hello {
+					padding-right: 0;
+					margin-right: 0;
+					border: none;
+					
+					@include breakpoint(medium down) {
+						padding-right: 1rem;
+					}
+				}
+				
+			}
+			
+			.dropdown {
+				position: absolute;
+				right: 0;
+				top: 100%;
+				background: $white;
+				text-align: left;
+				z-index: 50;
+				padding: .5rem;
+				box-shadow: 0 1px 3px rgba($black,0.12), 0 1px 2px rgba($black,0.24);
+				display: none;
+				
+				&.active {
+					display: block;
+				}
+				
+				h6 {
+					color: $grey;
+					border-bottom: 2px solid $grey;
+					padding-bottom: .25rem;
+				}
+				
+				.menu {
+					flex-direction: column;
+					
+					li {
+						
+						a {
+							padding: 0;
+							@extend p;
+							margin-bottom: .5rem;
+						}
+						
+					}
+					
+				}
+			}
+			
+		}
+		
+	}
+	
+}
+
+.sticky {
+	transform: none!important;
+}
+
+.sticky.is-stuck {
+	z-index: 2000!important;
+}
+
+.top-bar {
+	border-bottom: 1px solid $grey;
+	z-index: 1000;
+	
+	.grid-x {
+		align-items: flex-end;
+		flex-flow: row;
+		
+		@include breakpoint(small only) {
+			align-items: center;
+		}
+		
+		.top-right {
+			
+			.menu {
+				float: right;
+			}
+			
+			.hamburger {
+				float: right;
+				margin-right: 1rem;
+			}
+			
+		}
+		
+	}
+	
+	
+}
+
+.off-canvas {
+	padding: 4rem 1rem 0 1rem;
+	
+	.nav-close {
+		position: absolute;
+		right: 1rem;
+		top: 4rem;
+		z-index: 10;
+		
+		i {
+			font-size: 1.5rem;
+		}
+		
+	}
+	
+	#offcanvas-nav, #my-account {
+		flex-direction: column;
+		margin: 0;
+		
+		li {
+			
+			a {
+				@extend h5;
+				padding: .5rem 0;
+				
+				
+			}
+		
+			&.menu-item-11 {
+				border-top: 2px solid $grey;
+				border-bottom: 2px solid $grey;
+				padding: 1rem 0;
+				margin: 1rem 0;
+					
+			}	
+		}
+		
+		
+	}
+	
+	p {
+		font-size: 1rem;
+	}
+	
+	#my-account {
+
+		li {
+			
+			a {
+				font-size: 1rem;				
+			}	
+		}
+		
+	}
+	
+	h4 {
+		margin-top: 1rem;
+	}
+	
+	.sign-up, .log-in {
+		display: block;
+		width: calc( 50% - .5rem);
+		border: 1px solid $black;
+		text-transform: uppercase;
+		float: left;
+		border-radius: 5px;
+		padding: .8rem .5rem;
+	}
+	
+	.sign-up {
+		color: $white;
+		background: black;
+		margin-right: 1rem;
+	}
+	
+	.log-in {
+		color: $black;
+		background: $white;
+	}
+	
+}

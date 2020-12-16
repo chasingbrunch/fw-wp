@@ -1,0 +1,2 @@
+.hero-banner{position:relative;height:60vh;overflow:hidden;-ms-flex-align:center;align-items:center}.hero-banner>img{position:absolute;left:50%;top:50%;transform:translateY(-50%) translateX(-50%);width:100%;height:auto;z-index:1}.hero-banner .youtube-background{z-index:1}.hero-banner .cell{position:relative;z-index:2;text-align:center;color:#fff}.hero-banner .cell *{color:#fff}.hero-slider .hero-slide{-ms-flex-align:end;align-items:flex-end}
+/*# sourceMappingURL=dynamic.css.map */

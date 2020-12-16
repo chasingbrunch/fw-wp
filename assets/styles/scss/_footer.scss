@@ -1,0 +1,60 @@
+.footer {
+	background: $black;
+	color: $white;
+	padding: 2rem 0;
+	margin: 0;
+	
+	@include breakpoint(medium up) {
+		
+		.footer-content {
+			padding-right: 1rem;
+		}
+		
+	}
+	
+	@include breakpoint(small only) {
+		
+		.footer-content {
+			order: 3;
+		}
+		
+		.location-info {
+			order: 1;
+		}
+		
+		.footer-menu {
+			order: 2;
+		}
+		
+		.copyright {
+			order: 4;
+		}	
+		
+	}
+	
+	h3 {
+		@extend h1;
+		@extend h1.alt;
+	}
+	
+	.menu {
+		flex-direction: column;
+		
+		li {
+			
+			a {
+				color: $white;
+				padding: .7rem 0;
+				
+			}
+		
+			&.active {
+			
+				a {
+					color: $white;
+					background: none;
+				}
+			}
+		}	
+	}
+}

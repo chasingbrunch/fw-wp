@@ -1,0 +1,491 @@
+#sorting {
+	
+	&.loading {
+		opacity: .5;
+	}
+	
+	.show-filters {
+		display: none;
+		
+	}
+	
+	&.hide-filters {
+		
+		.filters > h3, .filters > hr, #collection, #closed, #stage, .show-more, .hide-filters, #category, .mobile-scroll-nav, #genre, #event-series, .clear-tags.button {
+			display: none;
+			
+		}
+		
+		.show-filters {
+			display: inline-block;
+			
+		}
+		
+		.posts {
+			width: 100%!important;
+			
+		}
+		
+	}
+	
+	&.show-grid {
+		
+		button.show-grid {
+			
+			//display: none;
+			
+		}
+		
+		.product {
+			
+			h5, h6, .price {
+				
+				display: none!important;
+				
+			}
+			
+		}
+		
+	}
+	
+	&.show-list {
+		
+		button.show-list {
+			
+			//display: none;
+			
+		}
+		
+	}
+	
+	.tags {
+		display: none;
+		
+		&.has-tags {
+			display: block;	
+		}
+		
+	}
+	
+	.filters > div {
+		max-height: 170px;
+		overflow: hidden;
+		
+		&.expanded {
+			max-height: none;
+		}
+		
+		&.hidden {
+			display: none;
+		}
+		
+	}
+	
+	button.show-more {
+		
+		span {
+			&:before {
+				content: 'more';
+			}
+		}
+		
+		&.less {
+			
+			span {
+				&:before {
+					content: 'less';
+				}
+			}
+			
+			.fa-plus {
+				
+				&:before {
+					content: "\f068";
+				}
+				
+			}
+				
+		}
+		
+		&.hidden {
+			display: none;
+		}
+		
+	}
+	
+	.filters > h3 {
+		display: block;
+		position: relative;
+		
+		&:after {
+			font-family: 'FontAwesome';
+			content: '\f077';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: 0;
+		}
+		
+		&.closed {
+			
+			&:after {
+				content: '\f078';
+			}
+		}
+
+		
+	}
+	
+}
+
+
+#sorting {
+	
+	.filters {
+		padding-right: 2rem;
+		
+		@include breakpoint(small only) { 
+			padding-right: 0;
+			
+		}
+		
+		> * {
+			@include breakpoint(small only) { 
+				margin-right: calc(8.33333% + .625rem);
+			}
+		}
+		
+		h3 {
+			font-size: 1rem;
+			font-weight: 700;
+			margin-top: 1rem;
+			cursor: pointer;
+		}
+		
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		
+			li {
+				
+				a {
+					color: $grey;
+					
+					&.active {
+						color: $black;
+						
+					}
+					
+					&:hover, &:focus {
+						color: $black;
+					}
+					
+				}
+				
+			}
+		
+		}
+		
+		input {
+			font-weight: 400;
+		}
+		
+		label {
+			display: flex;
+			align-items: center;
+			margin-bottom: .5rem;
+			cursor: pointer;
+			
+			&:hover, &:focus {
+				
+				span {
+					background: $grey;
+				}
+			
+			}
+			
+			input {
+				opacity: 0;
+				width: 0;
+				height: 0;
+				margin: 0;
+				
+				&:checked + span {
+					background: $black;
+				}
+				
+			}
+			
+			span {
+				display: block;
+				border: 0.1rem solid $black;
+				border-radius: 50%;
+				height: 1rem;
+				width: 1rem;
+				display: flex;
+				margin-right: .25rem;
+			}
+			
+			
+		}
+		
+		.check {
+			
+			span {
+				border-radius: 15%;
+				
+			}
+			
+		}
+		
+		
+		
+		.show-more {
+			cursor: pointer;
+			
+			@include breakpoint(small only) { 
+				float: right;
+				display: block;
+				margin-bottom: 1rem;
+			}
+			
+			i {
+				margin-right: .5rem;
+			}
+			
+		}
+		
+		hr {
+			
+		}
+	
+	}
+	
+	.posts {
+		
+		.utility {
+			
+			.show-list, .show-grid {
+				cursor: pointer;
+				color: $grey;
+				
+				&.active {
+					color: $black;	
+				}
+				
+				&:hover, &:focus {
+					color: $black;
+				}
+				
+				
+			}
+			
+			.hide-filters, .show-filters {
+				margin-left: 1rem;
+				cursor: pointer;
+				
+				&:hover {
+					color: $grey;
+				}
+				
+			}
+			
+			select {
+				
+			}
+			
+			.tags {
+				@include breakpoint(small only) { 
+					padding: 1rem 0;
+				}
+				
+				.tag {
+					font-weight: 700;
+					font-style: italic;
+					display: inline-block;
+					cursor: pointer;
+					margin-right: 1rem;
+					
+					&:after {
+						content: '\f05c';
+						font-family: 'FontAwesome';
+						font-style: normal;
+						margin-left: .25rem;
+					}
+					
+					&:hover, &:focus {
+						color: $grey;
+					}
+					
+					
+				}
+				
+				.clear-tags {
+					font-weight: 700;
+					font-style: italic;
+					display: inline-block;
+					cursor: pointer;
+					text-decoration: underline;
+					
+					&:hover, &:focus {
+						color: $grey;
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		.results {
+			
+			.no-posts {
+				display: block;
+				margin-top: 2rem;
+				width: 100%;
+				text-align: center;
+				margin-bottom: 5rem;
+			}
+			
+			.product {
+				
+				h6 {
+					color: $grey;
+					margin-bottom: 1rem;
+				}
+				
+			}
+			
+			.no-posts {
+				
+				
+				
+			}
+			
+			
+			.cb-pagination {
+				//border-top: 2px solid $grey;
+				//border-bottom: 2px solid $grey;
+				text-align: center;
+				//padding: 1rem 0;
+				position: relative;
+				margin-bottom: 2rem;
+				
+				@include breakpoint(small only) { 
+					border: none;
+				}
+				
+				
+				button {
+					display: inline-block;
+					text-transform: uppercase;
+					font-weight: 700;
+					padding: .5rem 1rem;
+					margin: 1rem 0;
+					cursor: pointer;
+					
+					&:hover, &:focus {
+						border-bottom: 2px solid $grey;
+					}
+					
+					&.active {
+						border-bottom: 2px solid $black;
+					}
+					
+				}
+				
+				.page-button {
+					display: none;
+					@include breakpoint(small only) { 
+						display: none!important;
+					}
+				}
+				
+				.cb-next, .cb-prev {
+					position: absolute;
+					transform: translateY(-50%);
+					top: 50%;
+					padding: 0;
+					border: none!important;
+					margin: 0;
+					
+					&:hover, &:focus {
+						color: $grey;
+					}
+					
+				}
+				
+				.cb-prev {
+					left: 0;
+				}
+				
+				.cb-next {
+					right: 0;
+					
+				}
+				
+			}
+				
+		}
+		
+	}
+	
+}
+
+
+.mobile-scroll-nav {
+	
+	@include breakpoint(small only) {
+		
+		position: relative;
+		margin-right: 0!important;
+		
+		&:after {
+			content: '';
+			background: linear-gradient(90deg, rgba($white,0) 20%, rgba($white,1) 100%);
+			width: 20%;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		
+		#series {
+			overflow-x: scroll;
+			-webkit-overflow-scrolling: touch;
+			display: flex;
+			padding: 1rem 0;
+			position: relative;
+			width: 100%;
+			
+			&::-webkit-scrollbar {
+				width: 0px;
+				background: transparent;
+			}
+			
+			li {
+				
+				a {
+					font-size: rem-calc( 20 );
+					line-height: calc( 30 / 20 );
+					font-weight: 400;
+					margin-right: 1.5rem;
+					white-space: nowrap;
+					padding: 1rem 0;
+					display: block;
+					
+				}	
+				
+			}
+			
+		}
+		
+		& + hr {
+			display: block!important;
+		}
+		
+	}
+	
+}
+
